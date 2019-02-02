@@ -1,4 +1,5 @@
-    
+Simple JAN-KEN-POW Game    
+
 Download package 
 
     go get -u github.com/EricLau1/jankengo
@@ -46,6 +47,6 @@ The match ended in a draw.
   
     ErrMatchDraw
   
-Chose greater than 2 or less than 3
+Chose greater than 2 or less than 0
 
     ErrWrongChoice
