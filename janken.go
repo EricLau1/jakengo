@@ -1,4 +1,4 @@
-package janken
+package jankengo
 
 import(
   "fmt"
