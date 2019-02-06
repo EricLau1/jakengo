@@ -30,6 +30,16 @@ Constants
         SCISSOR = 2
     )
 
+Errors
+ 
+The match ended in a draw.
+  
+    ErrMatchDraw
+  
+Chose greater than 2 or less than 0
+
+    ErrWrongChoice
+
 
 How to play
 
@@ -40,13 +50,12 @@ How to play
     }
     fmt.Printf("Winner: %s, Choose: %s\n", winner.Name, jankengo.Itens[winner.Choose])
 
+How to play Vs mode
 
-Errors
- 
-The match ended in a draw.
-  
-    ErrMatchDraw
-  
-Chose greater than 2 or less than 0
-
-    ErrWrongChoice
+    p1 := jankengo.Player{"Jane Doe", jankengo.STONE,}
+    p2 := jankengo.Player{"Jon Doe", jankengo.SCISSOR,}
+    winner, err := jankengo.Vs(p1, p2)
+    if err != nil {
+    log.Fatal(err)
+    }
+    fmt.Printf("Winner: %s ==> [%s]\n", winner.Name, jankengo.Itens[winner.Choose])
