@@ -58,7 +58,9 @@ func Start(p1, p2 Player) (Player, error) {
   if verifyMatchDraw(p1, p2) {
     return Player{}, ErrMatchDraw
   }
-  fmt.Printf("Player: %s, CPU: %s\n", Itens[p1.Choose], Itens[p2.Choose])
+  fmt.Printf("Player 1: %s ==> [%s]\n", p1.Name, Itens[p1.Choose])
+  fmt.Printf("Player 2: %s ==> [%s]\n", p2.Name, Itens[p2.Choose])
+  fmt.Println("===================================================\n")
   switch(p1.Choose) {
     case STONE:
       return toStone(p1, p2), nil
