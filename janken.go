@@ -33,7 +33,7 @@ func cpuToChoose() int {
 }
 
 func Pow(player Player) (Player, error) {
-  fmt.Println("\nJAN-KEN-PO!!!")
+  Init()
   cpu := Player{"CPU", cpuToChoose(),}
   winner, err := Start(player, cpu)
   if err != nil {
@@ -43,7 +43,7 @@ func Pow(player Player) (Player, error) {
 }
 
 func Vs(p1, p2 Player) (Player, error) {
-  fmt.Println("\nJAN-KEN-PO!!!")
+  Init()
   winner, err := Start(p1, p2)
   if err != nil {
     return winner, err
@@ -60,7 +60,7 @@ func Start(p1, p2 Player) (Player, error) {
   }
   fmt.Printf("Player 1: %s ==> [%s]\n", p1.Name, Itens[p1.Choose])
   fmt.Printf("Player 2: %s ==> [%s]\n", p2.Name, Itens[p2.Choose])
-  fmt.Println("===================================================\n")
+  fmt.Println("=========================================")
   switch(p1.Choose) {
     case STONE:
       return toStone(p1, p2), nil
@@ -111,3 +111,11 @@ func toScissor(p1, p2 Player) Player {
   return p1
 }
 
+func Init() {
+  var jankenpow = []string{"JAN", "-KEN-", "POW!!!"}
+  for _, j := range jankenpow {
+    fmt.Print(j)
+    time.Sleep(1 * time.Second)
+  }
+  fmt.Println("\n")
+}
