@@ -33,9 +33,18 @@ func cpuToChoose() int {
 }
 
 func Pow(player Player) (Player, error) {
-  fmt.Println("\nJA-KEN-PO!!!")
+  fmt.Println("\nJAN-KEN-PO!!!")
   cpu := Player{"CPU", cpuToChoose(),}
   winner, err := Start(player, cpu)
+  if err != nil {
+    return winner, err
+  }
+  return winner, nil
+}
+
+func Vs(p1, p2 Player) (Player, error) {
+  fmt.Println("\nJAN-KEN-PO!!!")
+  winner, err := Start(p1, p2)
   if err != nil {
     return winner, err
   }
